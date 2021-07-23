@@ -1,0 +1,30 @@
+#include<stdio.h>
+int main(void) {
+
+	int A = 0;
+	int B = 0;
+	int C = 0;
+	int rest = 0;
+	int result = 0;
+	int intArray[10] = { 0 };
+
+	scanf("%d", &A);
+	scanf("%d", &B);
+	scanf("%d", &C);
+
+	result = A * B * C;
+
+	do {
+		rest = result % 10;
+		intArray[rest]++;
+		result /= 10;
+
+	} while (result / 10 > 0);
+
+	intArray[result % 10]++;
+
+	for (int i = 0; i < 10; i++) 
+	{
+			printf("%d\n", intArray[i]);
+	}
+}
